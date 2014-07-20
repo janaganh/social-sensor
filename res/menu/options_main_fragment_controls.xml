@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item  android:id="@+id/menu_query_options" android:showAsAction="ifRoom" android:title="@string/menu_query_options_title" android:titleCondensed="@string/menu_query_options_title_cond" android:icon="@drawable/menu_status_update">
+        <menu >
+        <group android:id="@+id/group1" android:checkableBehavior="single">
+            <item android:id="@+id/option_lt"  android:title="@string/menu_query_options_lt"/>
+            <item android:id="@+id/option_gt" android:title="@string/menu_query_options_gt" />
+            <item android:id="@+id/option_eq" android:title="@string/menu_query_options_eq" />
+            <item android:id="@+id/option_and" android:title="@string/menu_query_options_and" />
+            <item android:id="@+id/option_or" android:title="@string/menu_query_options_or" />
+            <item android:id="@+id/option_neq" android:title="@string/menu_query_options_neq" />
+            <item android:id="@+id/option_gteq" android:title="@string/menu_query_options_gteq" />
+            <item android:id="@+id/option_lteq" android:title="@string/menu_query_options_lteq" />
+            <item android:id="@+id/option_attrs" android:title="@string/menu_query_options_attrs" />
+            <item android:id="@+id/option_action"  android:title="@string/menu_query_options_action"/>
+            
+            <item android:id="@+id/option_action_multiple"  android:title="@string/menu_query_options_action_multiple"/>
+            <item android:id="@+id/option_invalid"  android:title="@string/menu_query_options_invalid_query"/>                                    
+        </group>   
+        </menu>
+    </item>
+    <item android:id="@+id/menu_timeline" android:showAsAction="ifRoom" android:title="@string/menu_timeline_title" android:titleCondensed="@string/menu_timeline_title_cond" android:icon="@drawable/menu_start_service"></item>
+    <item android:id="@+id/menu_compose" android:showAsAction="ifRoom" android:title="@string/menu_compose_title" android:titleCondensed="@string/menu_compose_title_cond" android:icon="@drawable/menu_stop_service"></item>
+   
+    
+</menu>

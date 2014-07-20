@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry kind="lib" path="E:/MSC_PROJECT/src/dalsps-project/libs/android-support-v4.jar"/>
+	<classpathentry kind="lib" path="E:/MSC_PROJECT/src/dalsps-project/libs/jtwitter.jar"/>
+	<classpathentry kind="lib" path="E:/MSC_PROJECT/src/dalsps-project/libs/antlr-runtime-3.4.jar"/>
+	<classpathentry kind="lib" path="E:/MSC_PROJECT/src/dalsps-project/libs/jzlib-1.07.jar"/>
+	<classpathentry kind="lib" path="E:/MSC_PROJECT/src/dalsps-project/libs/asmack-android-7.jar" sourcepath="E:/MSC_PROJECT/tools/smack_apis/asmack/asmack-android-7-source"/>
+	<classpathentry kind="output" path="bin/classes"/>
+</classpath>

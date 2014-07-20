@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dalsps"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="14" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="com.dalsps.permission.RECEIVE_NEW_STATUS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <permission
+        android:name="com.dalsps.permission.RECEIVE_NEW_STATUS"
+        android:label="@string/perm_new_status_label"
+        android:protectionLevel="signature" >
+    </permission>
+
+    <application
+        android:name="DalspsApplication"
+        android:debuggable="true"
+        android:label="@string/app_name" >
+        <activity
+            android:name="MainActivity"
+            android:label="@string/app_name" android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="PrefsActivity" />
+
+        <service android:name="UpdaterService" >
+        </service>
+
+        <service android:name="SensorService" >
+        </service>
+        <service android:name="com.dalsps.QueryProcessingService" >
+            <intent-filter> 
+                <action android:name="com.dalsps.action.PROCESS_QUERY_START"/>
+                <action android:name="com.dalsps.action.PROCESS_QUERY_STOP"/>
+                                
+             </intent-filter>
+        </service>
+        <service android:name="com.dalsps.QueryService" >
+            <intent-filter> 
+                <action android:name="com.dalsps.action.QUERY_START"/>
+                <action android:name="com.dalsps.action.QUERY_STOP"/>
+                                
+             </intent-filter>
+        </service>
+        <service android:enabled="true" android:name="com.dalsps.net.MainService" android:exported="false">
+            <intent-filter>
+                <action android:name="com.dalsps.action.CONNECT" />
+ 			    <action android:name="com.dalsps.action.DISCONNECT" />
+                <action android:name="com.dalsps.action.SEND" />
+                <action android:name="com.dalsps.action.SEND_QUERY" />
+                <action android:name="com.dalsps.action.action.NETWORK_CHANGED" />
+                <action android:name="com.dalsps.action.FIRE_INTENT" />
+                <action android:name="com.dalsps.viewstatus.SENTDATA" />  
+                           
+            </intent-filter>
+        </service>
+        <receiver android:name="com.dalsps.net.NetworkConnectivityReceiver" android:enabled="true">
+             <intent-filter>
+                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+             </intent-filter>
+        </receiver>
+        <receiver android:name="com.dalsps.WidgetProvider" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.dalsps.action.XMPP.CONNECTION_CHANGED"/>
+                <action android:name="com.dalsps.action.widget.ACTION" />
+            </intent-filter>            
+            <meta-data android:name="android.appwidget.provider"
+                       android:resource="@xml/appwidget_info" />
+        </receiver>
+        <provider
+            android:name="StatusProvider"
+            android:authorities="com.dalsps" >
+        </provider>
+
+        <receiver android:name="BootReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        
+    </application>
+
+</manifest>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <EditTextPreference android:key="login" android:title="@string/pref_user_title" />
+    <EditTextPreference android:key="password" android:title="@string/pref_password_title" android:password="true"  />
+    <EditTextPreference android:key="serverHost" android:title="@string/pref_server_title" />   
+    <com.dalsps.util.EditIntegerPreference android:key="serverPort" android:numeric="integer" android:title="@string/pref_server_port_title" android:inputType="number" />    
+    <EditTextPreference android:key="serviceName" android:title="@string/pref_service_title" />
+    <EditTextPreference android:key="notifiedAddress" android:title="@string/pref_notified_title"  />    
+    
+</PreferenceScreen>
